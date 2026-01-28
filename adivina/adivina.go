@@ -7,6 +7,8 @@ import (
 
 func main() {
 	var (
-		name type
+		secreto int
+		numero int
+		alias string
 	)
 }
