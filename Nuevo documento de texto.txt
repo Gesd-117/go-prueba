@@ -1,0 +1,6 @@
+actualizar datos de repositorio
+
+
+git add .
+git commit -m "mensaje"
+git push
