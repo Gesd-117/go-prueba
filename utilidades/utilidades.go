@@ -64,3 +64,26 @@ for  {
 
 	
 }
+
+func LeerTexto(mensaje string,aviso string) string{
+
+	var texto string
+	
+
+for  {
+	fmt.Printf("%v: ",mensaje)
+	fmt.Scanln(&texto)
+
+	if texto == ""{
+		fmt.Printf("tu %v no puede estar vacio\n", aviso)
+
+		var limpiar string
+		fmt.Scanln(&limpiar)
+		continue
+	}
+
+	return texto
+}
+}
+
+
