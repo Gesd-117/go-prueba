@@ -4,7 +4,6 @@ import (
 	util "arsistema/utilidades"
 	"fmt"
 	"slices"
-	_ "strings"
 )
 
 func main() {
@@ -21,6 +20,7 @@ func main() {
 		17,
 		30,
 	}
+
 	edades = append(edades, 30)
 	edades = append(edades, 33)
 
@@ -30,6 +30,8 @@ func main() {
 	listaDeEdadesAsc(edades...)
 	listaDeEdadesDes(edades...)
 	edadMaxMin(edades...)
+	listaMayoresDeEdad(edades...)
+	listaMenoresDeEdad(edades...)
 }
 
 func listaDeEdades(edades ...int) {
@@ -54,7 +56,7 @@ func listaDeEdadesDes(edades ...int) {
 
 func edadMaxMin(edades ...int) {
 
-	util.Encabezado("Edad mas maxima y minima", 70)
+	util.Encabezado("Edad maxima y minima", 50)
 
 	var (
 		edadMinima int
@@ -77,15 +79,46 @@ func edadMaxMin(edades ...int) {
 
 	}
 
-	fmt.Printf("La edad maxima  es: %v\n", edadMaxima)
+	fmt.Printf("La edad maxima es: %v\n", edadMaxima)
 	fmt.Printf("La edad minima es: %v\n", edadMinima)
-	util.Linea(70)
+	util.Linea(50)
 
 }
 
-func listaMayoresDeEdad(edades ...int)  {
-	
+func listaMayoresDeEdad(edades ...int) {
+
+	var (
+		mayoresDeEdad = []int{}
+	)
+
+	for _, edad := range edades {
+
+		if edad >= 18 {
+			mayoresDeEdad = append(mayoresDeEdad, edad)
+		}
+
+	}
+
 	util.Encabezado("lista de mayores de edad", 50)
-	listaDeEdades(edades...)
-	
+	listaDeEdades(mayoresDeEdad...)
+	util.Linea(50)
+
+}
+
+func listaMenoresDeEdad(edades ...int) {
+	var (
+		menoresDeEdad = []int{}
+	)
+
+	for _, edad := range edades {
+
+		if edad < 18 {
+			menoresDeEdad = append(menoresDeEdad, edad)
+		}
+
+	}
+
+	util.Encabezado("lista de menores de edad", 50)
+	listaDeEdades(menoresDeEdad...)
+	util.Linea(50)
 }

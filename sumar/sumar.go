@@ -3,7 +3,6 @@ package main
 import (
 	util "arsistema/utilidades"
 	"fmt"
-	_ "strings"
 )
 
 func main() {
